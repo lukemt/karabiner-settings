@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <root>
-  <item>
-    <name>Comment: Event Viewer: See Icon. And: https://github.com/tekezo/Karabiner/blob/master/src/bridge/generator/keycode/data/KeyCode.data file: /Users/Mainuser/Library/Application Support/Karabiner/private.xml</name>
-    <identifier>private.comments</identifier>
-  </item> 
+	<!-- 
+	#HowTo get character names: 
+		Event Viewer: See Icon. 
+		And: https://github.com/tekezo/Karabiner/blob/master/src/bridge/generator/keycode/data/KeyCode.data 
+	settings file: 
+		/Users/Mainuser/Library/Application Support/Karabiner/private.xml</name>
+    -->
 
   <item>
     <name>Delete with ö</name>
@@ -13,34 +16,103 @@
   </item>
 
   <item>
-    <name>Swap Space and Tab</name>
-    <identifier>private.swap_space_and_tab</identifier>
-    <autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::TAB</autogen>
-    <autogen>__KeyToKey__ KeyCode::TAB, KeyCode::SPACE</autogen>
-  </item>
-
-  <item>
-    <name>Some Space-To-Command Remaps</name>
+    <name>Some Space Remaps</name>
     <identifier>private.some_remaps</identifier>
-    <autogen>__KeyToKey__ KeyCode::D, VK_CONTROL, KeyCode::SLASH, ModifierFlag::COMMAND_L</auto>
-    <autogen>__KeyToKey__ KeyCode::A, VK_CONTROL, KeyCode::A, ModifierFlag::COMMAND_L</autogen>
-    <autogen>__KeyToKey__ KeyCode::P, VK_CONTROL, KeyCode::P, ModifierFlag::COMMAND_L</autogen>
-    <autogen>__KeyToKey__ KeyCode::X, VK_CONTROL, KeyCode::X, ModifierFlag::OMMAND_L</autogen>
+
+    <!-- command -->
+    <autogen>__KeyToKey__ KeyCode::X, VK_CONTROL, KeyCode::X, ModifierFlag::COMMAND_L</autogen>
     <autogen>__KeyToKey__ KeyCode::C, VK_CONTROL, KeyCode::C, ModifierFlag::COMMAND_L</autogen>
     <autogen>__KeyToKey__ KeyCode::V, VK_CONTROL, KeyCode::V, ModifierFlag::COMMAND_L</autogen>
+
     <autogen>__KeyToKey__ KeyCode::T, VK_CONTROL, KeyCode::T, ModifierFlag::COMMAND_L</autogen>
+
+    <!-- Browser Zoom -->
     <autogen>__KeyToKey__ KeyCode::E, VK_CONTROL, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::D, VK_CONTROL, KeyCode::SLASH, ModifierFlag::COMMAND_L</auto>
+
+    <!-- Space + n  to  new line -->
+    <autogen>__KeyToKey__ KeyCode::N, VK_CONTROL, KeyCode::RETURN</autogen>
+
+    <!-- Sonderzeichen []|{}' -->
+    <autogen>__KeyToKey__ KeyCode::5, VK_CONTROL, KeyCode::5, ModifierFlag::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::6, VK_CONTROL, KeyCode::6, ModifierFlag::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::7, VK_CONTROL, KeyCode::7, ModifierFlag::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::8, VK_CONTROL, KeyCode::8, ModifierFlag::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::9, VK_CONTROL, KeyCode::9, ModifierFlag::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::EQUAL, VK_CONTROL, KeyCode::BACKSLASH, ModifierFlag::SHIFT_L</autogen>
+
+    <!-- "<>" and "-" to SHIFT -->
+    <autogen>__KeyToKey__ KeyCode::GERMAN_LESS_THAN, KeyCode::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::SHIFT_R</autogen>
+
+    <!-- "0" "ß" to "<" ">" -->
+    <autogen>__KeyToKey__ KeyCode::0, VK_CONTROL, KeyCode::GERMAN_LESS_THAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::MINUS, VK_CONTROL, KeyCode::GERMAN_LESS_THAN, ModifierFlag::SHIFT_L</autogen>
+
+    <!-- Space + ä to ä -->
+    <autogen>__KeyToKey__ KeyCode::GERMAN_A_UMLAUT, VK_CONTROL, KeyCode::GERMAN_A_UMLAUT</autogen>
+    <!-- Alt + ä to ä -->
+    <autogen>__KeyToKey__ KeyCode::GERMAN_A_UMLAUT, VK_OPTION, KeyCode::GERMAN_A_UMLAUT</autogen>
+    <!-- "äÄ" to "-_" -->
+    <autogen>__KeyToKey__ KeyCode::GERMAN_A_UMLAUT, KeyCode::SLASH</autogen>
+  </item>
+
+
+  <item>
+    <name>Shifts to Parentheses</name>
+    <appendix>When pressed alone, Left Shift types left paren (</appendix>
+    <appendix>When pressed alone, Right Shift types right paren )</appendix>
+    <appendix>When used with other keys, they're normal Shifts.</appendix>
+    <identifier>private.programmer.shifts_parens</identifier>
+
+    <modifier_not>
+      ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R,
+      ModifierFlag::CONTROL_L, ModifierFlag::CONTROL_R,
+      ModifierFlag::FN,
+      ModifierFlag::OPTION_L,  ModifierFlag::OPTION_R,
+    </modifier_not>
+
+    <!-- Pushing Shifts together produces () -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_L, ModifierFlag::SHIFT_R,
+      KeyCode::KEY_8, ModifierFlag::SHIFT_L,
+      KeyCode::KEY_9, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R, ModifierFlag::SHIFT_L,
+      KeyCode::KEY_8, ModifierFlag::SHIFT_L,
+      KeyCode::KEY_9, ModifierFlag::SHIFT_L,
+    </autogen>
+
+    <!-- This is the basic mapping. -->
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_R,
+      KeyCode::SHIFT_R,
+      KeyCode::KEY_9, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_L,
+      KeyCode::SHIFT_L,
+      KeyCode::KEY_8, ModifierFlag::SHIFT_R,
+    </autogen>
   </item>
 
   <item>
     <name>Workflowy</name>
-    <appendix>lol</appendix>
-    <appendix>loo</appendix>
-    <appendix>lolo</appendix>
     <identifier>private.workflowy_hacks</identifier>
     <only>SAFARI</only>
-    <autogen>__KeyToKey__ KeyCode::S, VK_CONTROL, KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L</autogen>
-    <autogen>__KeyToKey__ KeyCode::F, VK_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L</autogen>
+
+    <!-- starred pages switch -->
+    <autogen>__KeyToKey__ KeyCode::F, VK_CONTROL, KeyCode::SEMICOLON, ModifierFlag::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::S, VK_CONTROL, KeyCode::SEMICOLON, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L</autogen>
+
+<autogen>__KeyToKey__ KeyCode::Q, VK_CONTROL, KeyCode::KEYPAD_MULTIPLY, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L</autogen>
+    
+
   </item>
 
   <item>
