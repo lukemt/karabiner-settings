@@ -19,10 +19,11 @@
     <name>Some Space Remaps</name>
     <identifier>private.some_remaps</identifier>
 
-    <!-- command -->
+    <!-- copy & paste, deactivated because of terminal usage of control + c and x 
     <autogen>__KeyToKey__ KeyCode::X, VK_CONTROL, KeyCode::X, ModifierFlag::COMMAND_L</autogen>
     <autogen>__KeyToKey__ KeyCode::C, VK_CONTROL, KeyCode::C, ModifierFlag::COMMAND_L</autogen>
     <autogen>__KeyToKey__ KeyCode::V, VK_CONTROL, KeyCode::V, ModifierFlag::COMMAND_L</autogen>
+    -->
 
     <autogen>__KeyToKey__ KeyCode::T, VK_CONTROL, KeyCode::T, ModifierFlag::COMMAND_L</autogen>
 
