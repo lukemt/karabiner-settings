@@ -41,13 +41,22 @@
     <autogen>__KeyToKey__ KeyCode::9, VK_CONTROL, KeyCode::9, ModifierFlag::OPTION_L</autogen>
     <autogen>__KeyToKey__ KeyCode::EQUAL, VK_CONTROL, KeyCode::BACKSLASH, ModifierFlag::SHIFT_L</autogen>
 
-    <!-- "<>" and "-" to SHIFT -->
-    <autogen>__KeyToKey__ KeyCode::GERMAN_LESS_THAN, KeyCode::SHIFT_L</autogen>
-    <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::SHIFT_R</autogen>
 
     <!-- "0" "ß" to "<" ">" -->
     <autogen>__KeyToKey__ KeyCode::0, VK_CONTROL, KeyCode::GERMAN_LESS_THAN</autogen>
     <autogen>__KeyToKey__ KeyCode::MINUS, VK_CONTROL, KeyCode::GERMAN_LESS_THAN, ModifierFlag::SHIFT_L</autogen>
+
+  </item>
+
+
+
+  <item>
+    <name>simple shift   <!--  -_ and <> to Shift and äÄ to -_  --></name>
+    <identifier>private.some_hard_to_learn_remaps</identifier>
+
+    <!-- "<>" and "-" to SHIFT -->
+    <autogen>__KeyToKey__ KeyCode::GERMAN_LESS_THAN, KeyCode::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::SHIFT_R</autogen>
 
     <!-- Space + ä to ä -->
     <autogen>__KeyToKey__ KeyCode::GERMAN_A_UMLAUT, VK_CONTROL, KeyCode::GERMAN_A_UMLAUT</autogen>
@@ -55,7 +64,9 @@
     <autogen>__KeyToKey__ KeyCode::GERMAN_A_UMLAUT, VK_OPTION, KeyCode::GERMAN_A_UMLAUT</autogen>
     <!-- "äÄ" to "-_" -->
     <autogen>__KeyToKey__ KeyCode::GERMAN_A_UMLAUT, KeyCode::SLASH</autogen>
+
   </item>
+
 
 
   <item>
